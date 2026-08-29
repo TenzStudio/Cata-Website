@@ -1,19 +1,9 @@
 export const events = [
   {
-    id: 1,
-    title: "His Holiness the Dalai Lama's Birthday",
-    date: "2026-07-05",
-    time: "10:00 AM - 2:00 PM",
-    location: "Tibetan Community Center",
-    category: "Religious Events",
-    description: "Join us in celebrating the birthday of His Holiness the 14th Dalai Lama. We will have special prayers, cultural performances, and a community potluck.",
-    status: "Upcoming"
-  },
-  {
     id: 2,
     title: "Tibetan Democracy Day",
-    date: "2026-09-02",
-    time: "1:00 PM - 4:00 PM",
+    date: "2026-08-29",
+    time: "4:00 PM EST",
     location: "Tibetan Community Center",
     category: "Cultural Events",
     description: "Commemorating the establishment of the democratic system of the Tibetan exile community.",
@@ -22,9 +12,9 @@ export const events = [
   {
     id: 3,
     title: "24th NATA Conference",
-    date: "2026-09-16",
-    time: "9:00 AM - 5:00 PM",
-    location: "Tibetan Community Center",
+    date: "2026-09-05",
+    time: "September 5th - 7th",
+    location: "New York City (NYC)",
     category: "Community Events",
     description: "The 24th North American Tibetan Associations (NATA) Conference. A gathering of community leaders to discuss the future of our communities.",
     status: "Upcoming"

@@ -305,7 +305,7 @@ export default function Membership() {
                         <h3 style={{ marginBottom: '1rem' }}>Complete your Membership</h3>
                         <p style={{ color: 'var(--color-text-light)', marginBottom: '1.5rem' }}>You will be redirected to our secure Stripe checkout page.</p>
                         <a 
-                          href="https://buy.stripe.com/" 
+                          href="https://buy.stripe.com/test_3cI6oH1gD0sg5bB2vHfAc00" 
                           target="_blank" 
                           rel="noreferrer"
                           className="btn btn-primary"
