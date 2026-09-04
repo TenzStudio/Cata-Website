@@ -14,7 +14,7 @@ const businesses = [
     location: "Alexandria, VA",
     email: "pdhargyal@puroclean.com",
     website: "https://www.puroclean.com/alexandria-va-puroclean-alexandria/",
-    image: "/images/spotlight/puroclean.png",
+    image: "/images/spotlight/puroclean.jpg",
   },
   {
     id: 2,
