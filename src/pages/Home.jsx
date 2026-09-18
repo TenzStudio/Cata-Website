@@ -4,7 +4,7 @@ import { motion, useInView, animate } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 import useIsMobile from '../hooks/useIsMobile';
 import { events } from '../data/events';
-import { programs } from '../data/programs';
+import { clubs } from '../data/club';
 import SEO from '../components/SEO';
 import { BookOpen, Music, Users, Heart } from 'lucide-react';
 
@@ -83,7 +83,7 @@ export default function Home() {
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           >
             {/* Local Hero Video */}
-            <source src="/01.mp4" type="video/mp4" />
+            <source src="/hero-video.mp4" type="video/mp4" />
           </video>
         </div>
         
@@ -236,11 +236,11 @@ export default function Home() {
         <div className="aurora-orb accent" style={{ bottom: '-10%', right: '-10%', width: '600px', height: '600px', animationDelay: '-5s' }}></div>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: '600px', margin: '0 auto 4rem' }}>
-            <h2 className="text-gradient" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', marginBottom: '1rem' }}>Our Programs</h2>
+            <h2 className="text-gradient" style={{ fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', marginBottom: '1rem' }}>Our Clubs</h2>
             <p style={{ color: 'var(--color-text-light)', fontSize: '1.1rem' }}>Discover the various ways we serve and connect our community, from cultural education to youth empowerment.</p>
           </div>
           <div className="grid grid-cols-2">
-            {programs.map((prog, index) => {
+            {clubs.map((prog, index) => {
               const IconComponent = IconMap[prog.icon];
               return (
               <motion.div 
@@ -278,8 +278,8 @@ export default function Home() {
                   </div>
                   <h3 style={{ marginBottom: '1rem', fontSize: '1.4rem' }}>{prog.title}</h3>
                   <p style={{ color: 'var(--color-text-light)', marginBottom: '2rem', flex: 1, lineHeight: '1.6' }}>{prog.description}</p>
-                  <Link to="/programs" className="btn btn-outline" style={{ borderRadius: '9999px', padding: '0.5rem 1.5rem', fontSize: '0.9rem', width: 'auto' }}>
-                    Learn More &rarr;
+                  <Link to="/club" className="btn btn-outline" style={{ borderRadius: '9999px', padding: '0.5rem 1.5rem', fontSize: '0.9rem', width: 'auto' }}>
+                    View All Clubs &rarr;
                   </Link>
                 </Tilt>
               </motion.div>

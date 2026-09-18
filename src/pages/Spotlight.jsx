@@ -41,6 +41,19 @@ const businesses = [
 ];
 
 export default function Spotlight() {
+  // Toggle this to true when you are ready to launch the full page
+  const SHOW_FULL_PAGE = false;
+
+  if (!SHOW_FULL_PAGE) {
+    return (
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '2rem' }}>
+        <SEO title="Spotlight - Coming Soon" description="Our Community Spotlight is launching soon!" />
+        <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--color-primary)' }}>Community Spotlight</h1>
+        <p style={{ fontSize: '1.25rem', color: 'var(--color-text-light)', maxWidth: '600px' }}>Our exciting new Spotlight page is currently being finalized. Check back very soon to see features on local Tibetan-owned businesses!</p>
+      </motion.div>
+    );
+  }
+
   return (
     <div>
       <SEO title="Community Spotlight" description="Highlighting the achievements and contributions of our community members." />

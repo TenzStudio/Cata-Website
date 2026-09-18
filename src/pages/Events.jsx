@@ -61,11 +61,12 @@ export default function Events() {
     return { ...e, status: eventDate < now ? 'Completed' : 'Upcoming' };
   });
 
-  const sortedEvents = processedEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
-  const upcomingList = sortedEvents.filter(e => e.status === 'Upcoming');
+  const sortedEvents = processedEvents
+    .filter(e => e.status === 'Upcoming')
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
   
-  const featuredEvent = upcomingList.length > 0 ? upcomingList[0] : sortedEvents[0];
-  const upcomingEventsData = sortedEvents.filter(e => e.id !== featuredEvent?.id);
+  const featuredEvent = sortedEvents.length > 0 ? sortedEvents[0] : null;
+  const upcomingEventsData = featuredEvent ? sortedEvents.filter(e => e.id !== featuredEvent.id) : [];
   const [activeTab, setActiveTab] = useState('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -126,6 +127,7 @@ export default function Events() {
         
         <div className="container" style={{ paddingTop: '2rem' }}>
         {/* Featured Event Banner */}
+        {featuredEvent ? (
         <div style={{ marginBottom: '4rem' }}>
           <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <span style={{ display: 'inline-block', width: '12px', height: '12px', borderRadius: '50%', background: 'var(--color-primary)', boxShadow: '0 0 12px var(--color-primary)' }}></span>
@@ -149,7 +151,7 @@ export default function Events() {
                 <p style={{ fontSize: '1.1rem', color: 'var(--color-text-light)', marginBottom: '2rem', lineHeight: 1.6 }}>{featuredEvent.description}</p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginBottom: '2rem' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--color-text)', fontWeight: 500 }}>
-                    <CalendarDays size={20} strokeWidth={1.5} color="var(--color-primary)" /> {new Date(featuredEvent.date).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
+                    <CalendarDays size={20} strokeWidth={1.5} color="var(--color-primary)" /> {new Date(featuredEvent.date + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
                   </p>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--color-text)', fontWeight: 500 }}>
                     <MapPin size={20} strokeWidth={1.5} color="var(--color-primary)" /> {featuredEvent.location}
@@ -175,6 +177,11 @@ export default function Events() {
             </div>
           </motion.div>
         </div>
+        ) : (
+          <div style={{ textAlign: 'center', marginBottom: '4rem', padding: '3rem', background: 'rgba(255,255,255,0.5)', borderRadius: '24px' }}>
+            <h2 style={{ fontSize: '2rem', color: 'var(--color-text-light)', margin: 0 }}>Stay tuned! New events will be announced soon.</h2>
+          </div>
+        )}
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
           <h2 style={{ fontSize: '2rem', margin: 0 }}>Upcoming Schedule</h2>
@@ -270,7 +277,7 @@ export default function Events() {
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.5rem' }}>
                 <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-primary)', fontWeight: 600 }}>
-                  <CalendarDays size={18} strokeWidth={1.5} /> {new Date(event.date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                  <CalendarDays size={18} strokeWidth={1.5} /> {new Date(event.date + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                 </p>
                 <p style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-text-light)' }}>
                   <Clock size={18} strokeWidth={1.5} /> {event.time}

@@ -22,9 +22,9 @@ export const events = [
   {
     id: 4,
     title: "US Congressional Gold Medal Anniversary",
-    date: "2026-10-17",
-    time: "2:00 PM - 5:00 PM",
-    location: "Tibetan Community Center",
+    date: "2026-10-18",
+    time: "6:00 PM - 12:00 AM",
+    location: "McLean Church Hall",
     category: "Cultural Events",
     description: "Celebrating the anniversary of His Holiness the Dalai Lama receiving the US Congressional Gold Medal.",
     status: "Upcoming"

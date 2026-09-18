@@ -6,10 +6,9 @@ import { useAuth } from '../context/AuthContext';
 const navLinks = [
   { path: '/', label: 'Home', end: true },
   { path: '/events', label: 'Events' },
-  { path: '/programs', label: 'Programs' },
-  // { path: '/rentals', label: 'Rentals' },
+  { path: '/sundayschool', label: 'Sunday School' },
   { path: '/membership', label: 'Membership' },
-  { path: '/gallery', label: 'Gallery' },
+  { path: '/club', label: 'Club' },
   { path: '/spotlight', label: 'Spotlight' },
   { path: '/about', label: 'About' },
 ];
@@ -95,10 +94,9 @@ export default function Navbar() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', paddingTop: '1rem' }}>
                   <NavLink to="/" onClick={toggleMenu} className="pill-link" style={{ textAlign: 'center', display: 'block' }}>Home</NavLink>
                   <NavLink to="/events" onClick={toggleMenu} className="pill-link" style={{ textAlign: 'center', display: 'block' }}>Events</NavLink>
-                  <NavLink to="/programs" onClick={toggleMenu} className="pill-link" style={{ textAlign: 'center', display: 'block' }}>Programs</NavLink>
-                  {/* <NavLink to="/rentals" onClick={toggleMenu} className="pill-link" style={{ textAlign: 'center', display: 'block' }}>Rentals</NavLink> */}
+                  <NavLink to="/sundayschool" onClick={toggleMenu} className="pill-link" style={{ textAlign: 'center', display: 'block' }}>Sunday School</NavLink>
                   <NavLink to="/membership" onClick={toggleMenu} className="pill-link" style={{ textAlign: 'center', display: 'block' }}>Membership</NavLink>
-                  <NavLink to="/gallery" onClick={toggleMenu} className="pill-link" style={{ textAlign: 'center', display: 'block' }}>Gallery</NavLink>
+                  <NavLink to="/club" onClick={toggleMenu} className="pill-link" style={{ textAlign: 'center', display: 'block' }}>Club</NavLink>
                   <NavLink to="/spotlight" onClick={toggleMenu} className="pill-link" style={{ textAlign: 'center', display: 'block' }}>Spotlight</NavLink>
                   <NavLink to="/about" onClick={toggleMenu} className="pill-link" style={{ textAlign: 'center', display: 'block' }}>About</NavLink>
                   

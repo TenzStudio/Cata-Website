@@ -7,9 +7,10 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Events from './pages/Events';
 // import Rentals from './pages/Rentals';
-import Programs from './pages/Programs';
+import Club from './pages/Club';
 import Donate from './pages/Donate';
 import Gallery from './pages/Gallery';
+import SundaySchool from './pages/SundaySchool';
 import Contact from './pages/Contact';
 import Membership from './pages/Membership';
 import Spotlight from './pages/Spotlight';
@@ -33,10 +34,11 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/events" element={<Events />} />
               {/* <Route path="/rentals" element={<Rentals />} /> */}
-              <Route path="/programs" element={<Programs />} />
+              <Route path="/club" element={<Club />} />
               <Route path="/membership" element={<Membership />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/gallery" element={<Gallery />} />
+              <Route path="/sundayschool" element={<SundaySchool />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/spotlight" element={<Spotlight />} />
               <Route path="/login" element={<Login />} />
